@@ -1,0 +1,73 @@
+.content {
+    position: relative;
+    width: 100%;
+
+}
+
+.content__wrapper {
+    display: flex;
+}
+
+/* Блоки текста */
+
+.text__wrapper {}
+
+.main__title__wrapper {
+    width: 718px;
+    margin-bottom: 150px;
+}
+
+.main__title__wrapper p{
+    font-size: 70px;
+    font-weight: bold;
+    color: #BDBDBD;
+}
+
+.main__title__wrapper p span {
+    color: #999999;
+}
+
+.button__wrapper {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 290px;
+    height: 80px;
+    border-radius: 10px 10px 10px 0;
+    background-color: #DB3522;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+
+}
+
+.button {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.button__wrapper:hover {
+    cursor: pointer;
+    background-color: #39424A;
+}
+
+/* Блоки картинки */
+
+.image__block__wrapper {
+    position: relative;
+}
+
+.main__image__wrapper {
+    position: relative;
+    width: 714px;
+    height: 714px;
+    border-radius: 100%;
+    background-color: #39424A;
+    background-image: url("../../assets/images/main-page/women.png");
+    background-repeat: no-repeat;
+    background-position: 0px -70px;
+}
+
+.main__image {
+    height: 100%;
+}

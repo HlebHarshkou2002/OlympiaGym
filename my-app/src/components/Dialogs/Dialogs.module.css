@@ -1,0 +1,67 @@
+.dialogs {
+    font-size: 20px;
+}
+
+.dialogs h1 {
+    font-size: 2em;
+}
+
+.dialogs button {
+    width: 100px;
+    height: 50px;
+    background-color: #DB3522;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+
+.dialogs button:hover {
+    background-color: #f34c3a;
+    cursor: pointer;
+}
+
+.dialogs input {
+    max-width: 100%;
+    width: 70vw;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+
+.dialogsItems {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.dialogsItems .active {
+    color: black;
+    text-decoration: none;
+}
+
+.dialog {
+    color: black;
+}
+
+.messages {
+    color: black;
+}
+
+.message {
+    border-bottom: 1px solid #DB3522;
+    width: 500px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+}
+
+.message img {
+    width: 50px;
+}
+
+.form {
+    position: absolute;
+    display: flex;
+    bottom: 50px;
+}

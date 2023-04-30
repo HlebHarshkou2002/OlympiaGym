@@ -1,10 +1,10 @@
 import React from "react";
-import { setUserData, toggleIsFetching } from "../../redux/auth-reducer";
+import { setRegistrationUserData} from "../../redux/registration-reducer";
 import { connect } from "react-redux";
-import Header from "./Header";
 import axios from "axios";
+import Registration from "./Registration";
 
-class HeaderContainer extends React.Component {
+class RegistrationContainer extends React.Component {
   componentDidMount() {
     // this.props.toggleIsFetching(true);
     // axios
@@ -26,17 +26,18 @@ class HeaderContainer extends React.Component {
 
 
   render() {
-    return <Header {...this.props} />;
+    return <Registration {...this.props}/>;
   }
 }
 
 const mapStateToProps = (state) => {
   return {
     isAuth: state.auth.isAuth,
-    login: state.auth.login,
+    email: state.auth.email,
+    password: state.auth.password,
     id: state.auth.id,
     isFetching: state.auth.isFetching
   };
 };
 
-export default connect(mapStateToProps, { setUserData, toggleIsFetching })(HeaderContainer);
+export default connect(mapStateToProps, { setRegistrationUserData})(RegistrationContainer);

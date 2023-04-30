@@ -6,6 +6,8 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import ServicesContainer from "./components/Services/ServicesContainer";
+import LoginContainer from "./components/Login/LoginContainer";
+import RegistrationContainer from "./components/Registration/RegistrationContainer";
 
 const App = (props) => {
 
@@ -20,6 +22,8 @@ const App = (props) => {
                  <Route path="/Main" element={<Main/>}/>
                  <Route path="/services" element={<ServicesContainer/>}/>
                  <Route path="/users" element={<UsersContainer/>}/>
+                 <Route path="/login" element={<LoginContainer />}/>
+                 <Route path="/registration" element={<RegistrationContainer />}/>
              </Routes>
          </div>
         </div>

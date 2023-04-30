@@ -5,6 +5,8 @@ import profileReducer from "./profile-reducer";
 import sidebarReducer from './sidebar-reducer';
 import usersReducer from './users-reducer';
 import servicesReducer from "./services-reducer";
+import loginReducer from "./login-reducer";
+import registrationReducer from "./registration-reducer";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -13,6 +15,8 @@ let reducers = combineReducers({
     usersPage: usersReducer,
     auth: authReducer,
     servicesPage: servicesReducer,
+    loginPage: loginReducer,
+    registrationPage: registrationReducer,
 });   
 
 let store = createStore(reducers);

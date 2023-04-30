@@ -11,7 +11,7 @@ const instance = axios.create({
 export const servicesAPI = {
   getServices() {
     return instance.get(`service/list`).then((response) => {
-      return response.data;
+      return response;
     });
   },
 };

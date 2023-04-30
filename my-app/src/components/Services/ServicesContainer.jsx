@@ -9,9 +9,11 @@ class ServicesAPIContainer extends React.Component {
     if (this.props.servicesData.length === 0) {
       servicesAPI.getServices()
         .then((data) => {
-          debugger;
-          console.log("Данные из ЗАПРОСА", data)
-          this.props.setServices(data.items);
+          this.props.setServices(data.data.items);
+        }).catch((err) => {
+          if(err.response.status === 403) {
+            alert("Вы не авторизованы.")
+          }
         });
     }
   }

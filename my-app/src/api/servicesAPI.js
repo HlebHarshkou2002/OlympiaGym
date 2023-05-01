@@ -10,8 +10,15 @@ const instance = axios.create({
 
 export const servicesAPI = {
   getServices() {
-    return instance.get(`service/list`).then((response) => {
-      return response;
-    });
+    let token = localStorage.getItem("token");
+    return instance
+      .get(`service/list`, {
+        headers: {
+          Authorization: token
+        },
+      })
+      .then((response) => {
+        return response;
+      });
   },
 };

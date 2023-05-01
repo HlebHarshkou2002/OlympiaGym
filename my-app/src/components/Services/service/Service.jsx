@@ -1,12 +1,22 @@
 import React from "react";
 import s from "./Service.module.css";
-import ServiceImage from "../../../assets/images/services/service.jpg"
+import ServiceImage from "../../../assets/images/services/service.jpg";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { usersAPI } from "../../../api/api";
+import { loginAPI } from "../../../api/loginAPI";
 
 const Service = (props) => {
-  // console.log("Наши пропсы: ", props);
+  console.log("Наши пропсы: ", props);
+
+  const joinService = () => {
+    loginAPI.getInformationAboutUser().then((response) => {
+      let userInformation = response.data;
+      let userId = response.data.id;
+      let serviceId = props.id;
+      console.log("Информация о пропсах: ", props);
+    });
+  };
 
   return (
     <div className={s.item}>
@@ -23,9 +33,11 @@ const Service = (props) => {
           <img src={ServiceImage} alt="Service image" />
         </div>
         <div className={s.category__info}>
-          <p>Описание: {props.category.description}</p>
-          <p className={s.category__name}>Категория: <span>{props.category.name}</span></p>
-          <button>Записаться</button>
+          {/* <p>Описание: {props.category.description}</p> */}
+          <p className={s.category__name}>
+            {/* Категория: <span>{props.category.name}</span> */}
+          </p>
+          <button onClick={joinService}>Записаться</button>
         </div>
       </div>
     </div>

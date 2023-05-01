@@ -10,7 +10,7 @@ let initialState = {
 };
 
 const registrationReducer = (state = initialState, action) => {
-  console.log("State: ", state)
+  // console.log("State: ", state)
 
   switch (action.type) {
     case SET_REGISTRATION_DATA:

@@ -13,7 +13,14 @@ const Registration = (props) => {
     let userLogin = login.current.value;
     let userPassword = password.current.value;
     props.setRegistrationUserData(userLogin, userPassword);
-    registrationAPI.registrateUser(userLogin, userPassword);
+    registrationAPI.registrateUser(userLogin, userPassword)
+      .then((response) => {
+        if(response.data.status === "ACTIVE") {
+          alert("Вы успешно зарегестрировались!")
+        }
+      })
+      .catch((error) => console.log(error));
+
     console.log("Ваш логин: ", userLogin);
     console.log("Ваш пароль: ", userPassword);
   };

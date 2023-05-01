@@ -6,6 +6,7 @@ import Nav from "./Nav/Nav";
 import s from "./Header.module.css";
 
 const Header = (props) => {
+  console.log("IS AUTH???",props)
   return (
     <header className={s.header}>
 
@@ -23,7 +24,7 @@ const Header = (props) => {
         <div className={s.register__item}>
           {props.isAuth ? (
             <NavLink
-              to={`/profile/` + props.id}
+              to={`/profile`}
               style={{ textDecoration: "none" }}
               className={s.register}
             >

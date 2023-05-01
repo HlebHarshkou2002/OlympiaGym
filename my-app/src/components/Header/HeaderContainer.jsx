@@ -1,5 +1,5 @@
 import React from "react";
-import { setUserData, toggleIsFetching } from "../../redux/auth-reducer";
+import { setUserData } from "../../redux/login-reducer";
 import { connect } from "react-redux";
 import Header from "./Header";
 import axios from "axios";
@@ -39,4 +39,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setUserData, toggleIsFetching })(HeaderContainer);
+export default connect(mapStateToProps, { setUserData })(HeaderContainer);

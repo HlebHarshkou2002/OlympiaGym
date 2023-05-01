@@ -12,7 +12,7 @@ const Services = (props) => {
     <div className={s.services__wrapper}>
       <h1>Наши услуги</h1>
 
-      <div>{props.isFetching ? <Preloader /> : servicesElements}</div>
+      <div>{servicesElements}</div>
     </div>
   );
 };

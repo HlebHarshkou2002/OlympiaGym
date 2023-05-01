@@ -11,7 +11,7 @@ let initialState = {
 
 const loginReducer = (state = initialState, action) => {
   //   console.log("Auth action: ", action);
-  // console.log("Auth state: ", state);
+  console.log("Login state: ", state);
   switch (action.type) {
     case SET_USER_DATA:
       return {
@@ -29,9 +29,9 @@ const loginReducer = (state = initialState, action) => {
   }
 };
 
-export const setUserData = (id, email, login, password) => ({
+export const setUserData = (email, login, password) => ({
   type: SET_USER_DATA,
-  data: { id, email, login, password },
+  data: { email, login, password },
 });
 
 // export const toggleIsFetching = (isFetching) => ({

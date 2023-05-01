@@ -15,15 +15,9 @@ export const registrationAPI = {
       "password": password
     };
     return instance.post(`auth/registration`, {
-      method: 'POST',
-      params: { 'api-version': '3.0' },
-      headers: {
-          'content-type': 'application/json',
-          'X-RapidAPI-Key': 'your-rapidapi-key',
-          'X-RapidAPI-Host': 'microsoft-translator-text.p.rapidapi.com',
-      },
-      data: userData,
-      body: userData,
+        "email": email,
+        "name": "pofig",
+        "password": password
     }).then((response) => {
       return response;
     });

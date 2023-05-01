@@ -14,9 +14,9 @@ class ServicesAPIContainer extends React.Component {
           this.props.setServices(data.data);
         })
         .catch((err) => {
-          // if(err.response.status === 403) {
-          //   alert("Вы не авторизованы.")
-          // }
+          if(err.response.status === 403) {
+            alert("Вы не авторизованы.")
+          }
         });
     }
   }

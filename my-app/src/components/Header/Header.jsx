@@ -4,11 +4,14 @@ import Preloader from "../common/Preloader/Preloader";
 import RegisterImage from "../../assets/images/icons/bx-log-in 1.png";
 import Nav from "./Nav/Nav";
 import s from "./Header.module.css";
+import { logoutAPI } from "../../api/logoutAPI";
 
 const Header = (props) => {
   
   const logoutUser = () => {
-
+    logoutAPI.logoutUser();
+    localStorage.removeItem("token");
+    window.location.reload();
   }
 
 

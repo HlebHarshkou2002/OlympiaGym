@@ -8,8 +8,13 @@ const instance = axios.create({
 });
 
 export const logoutAPI = {
-  logoutUser(email, password) {
-    return instance.post(`auth/logout`).then((response) => {
+  logoutUser() {
+    let token = localStorage.getItem("token");
+    return instance.post(`auth/logout`, {
+      headers: {
+        Authorization: token
+      },
+    }).then((response) => {
       return response;
     }).catch((error) => console.log(error));
   },

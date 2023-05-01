@@ -6,7 +6,6 @@ import Nav from "./Nav/Nav";
 import s from "./Header.module.css";
 
 const Header = (props) => {
-  console.log("IS AUTH???",props)
   return (
     <header className={s.header}>
 
@@ -23,6 +22,7 @@ const Header = (props) => {
       ) : (
         <div className={s.register__item}>
           {props.isAuth ? (
+            <div>
             <NavLink
               to={`/profile`}
               style={{ textDecoration: "none" }}
@@ -30,6 +30,8 @@ const Header = (props) => {
             >
               <p>{props.login}</p>
             </NavLink>
+            <button>Выйти</button>
+            </div>
           ) : (
             <NavLink className={s.register} to={"/login"}>
               <img src={RegisterImage} alt="Войти" />

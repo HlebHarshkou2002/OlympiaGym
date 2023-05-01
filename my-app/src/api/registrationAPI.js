@@ -9,11 +9,6 @@ const instance = axios.create({
 
 export const registrationAPI = {
   registrateUser(email, password) {
-    let userData = {
-      "email": email,
-      "name": "pofig",
-      "password": password
-    };
     return instance.post(`auth/registration`, {
         "email": email,
         "name": "pofig",

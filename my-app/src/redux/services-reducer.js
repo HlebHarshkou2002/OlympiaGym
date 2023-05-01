@@ -66,7 +66,6 @@ let initialState = {
 const servicesReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_SERVICES:
-      console.log("ACTION SERVICES",action.services)
       return {
         ...state,
         services: action.services,

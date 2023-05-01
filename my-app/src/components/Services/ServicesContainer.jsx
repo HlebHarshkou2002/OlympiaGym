@@ -9,7 +9,6 @@ class ServicesAPIContainer extends React.Component {
     if (this.props.servicesData.length === 0) {
       servicesAPI.getServices()
         .then((data) => {
-          console.log("Data!!!! ", data)
           this.props.setServices(data.data);
         }).catch((err) => {
           // if(err.response.status === 403) {

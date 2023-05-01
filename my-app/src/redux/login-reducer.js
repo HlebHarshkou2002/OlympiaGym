@@ -11,7 +11,7 @@ let initialState = {
 
 const loginReducer = (state = initialState, action) => {
   //   console.log("Auth action: ", action);
-  console.log("Login state: ", state);
+  // console.log("Login state: ", state);
   switch (action.type) {
     case SET_USER_DATA:
       return {

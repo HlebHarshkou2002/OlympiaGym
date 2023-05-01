@@ -5,16 +5,20 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { usersAPI } from "../../../api/api";
 import { loginAPI } from "../../../api/loginAPI";
+import { servicesAPI } from "../../../api/servicesAPI";
 
 const Service = (props) => {
-  console.log("Наши пропсы: ", props);
 
-  const joinService = () => {
+  const makeOrder = () => {
     loginAPI.getInformationAboutUser().then((response) => {
       let userInformation = response.data;
       let userId = response.data.id;
       let serviceId = props.id;
-      console.log("Информация о пропсах: ", props);
+      console.log("Информация об айди сервиса: ", serviceId);
+      console.log("Информация об айди клиента: ", userId);
+      servicesAPI.makeServiceOrder(serviceId, userId).then((response) => {
+        console.log("Наш ответ после оформления заказа", response);
+      })
     });
   };
 
@@ -33,11 +37,11 @@ const Service = (props) => {
           <img src={ServiceImage} alt="Service image" />
         </div>
         <div className={s.category__info}>
-          {/* <p>Описание: {props.category.description}</p> */}
+          <p>Описание: {props.category.description}</p>
           <p className={s.category__name}>
-            {/* Категория: <span>{props.category.name}</span> */}
+            Категория: <span>{props.category.name}</span>
           </p>
-          <button onClick={joinService}>Записаться</button>
+          <button onClick={makeOrder}>Записаться</button>
         </div>
       </div>
     </div>

@@ -14,11 +14,26 @@ export const servicesAPI = {
     return instance
       .get(`service/list`, {
         headers: {
-          Authorization: token
+          Authorization: token,
         },
       })
       .then((response) => {
         return response;
       });
+  },
+
+  makeServiceOrder(serviceId, userId) {
+    let token = localStorage.getItem("token");
+    return instance.post(`/order`, {
+        headers: {
+          Authorization: token,
+        },
+        "serviceId": serviceId,
+        "userId": userId
+      })
+      .then((response) => {
+        return response;
+      })
+      .catch((error) => {console.log(error)});
   },
 };

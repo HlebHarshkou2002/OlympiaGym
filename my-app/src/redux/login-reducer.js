@@ -1,4 +1,5 @@
 const SET_USER_DATA = "SET_USER_DATA";
+const SET_USER_ROLE = "SET_USER_ROLE";
 
 let initialState = {
   id: null,
@@ -7,6 +8,7 @@ let initialState = {
   login: null,
   isAuth: false,
   isFetching: false,
+  userRole: "User",
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -18,6 +20,11 @@ const loginReducer = (state = initialState, action) => {
         ...state,
         ...action.data,
         isAuth: true,
+      };
+    case SET_USER_ROLE:
+      return {
+        ...state,
+        userRole: action.userRole,
       };
     // case TOGGLE_IS_FETCHING:
     //   return {
@@ -33,6 +40,11 @@ export const setUserData = (email, login, password) => ({
   type: SET_USER_DATA,
   data: { email, login, password },
 });
+
+export const setUserRole = (userRole) => ({
+  type: SET_USER_ROLE,
+  userRole
+})
 
 // export const toggleIsFetching = (isFetching) => ({
 //   type: TOGGLE_IS_FETCHING,

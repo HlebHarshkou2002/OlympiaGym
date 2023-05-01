@@ -19,13 +19,19 @@ const Login = (props) => {
         if(response.status === 200) {
           props.setUserData(response.data.email, userLogin, userPassword)
           alert("Вы успешно авторизовались!")
+          window.location.reload();
+
         }
         console.log("Response: ", response)
         localStorage.setItem("token", response.data.token)
+        localStorage.setItem("login", response.data.email)
+        localStorage.setItem("isAuth", true)
+        
       })
       .catch((error) => console.log(error));
     console.log("Ваш логин: ", userLogin);
     console.log("Ваш пароль: ", userPassword);
+
   };
 
   return (

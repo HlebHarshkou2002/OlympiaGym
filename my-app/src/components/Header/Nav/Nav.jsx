@@ -2,7 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import s from './Nav.module.css';
 
-const Nav = () => {
+const Nav = (props) => {
+
+    let checkUserRole = () => {
+
+    }
+
+
     return (
         <nav className={s.nav}>
             <div className={`${s.item} ${s.active}`}>
@@ -21,7 +27,12 @@ const Nav = () => {
             <NavLink to="/Users" className = { navData => navData.isActive ? s.active : s.item }>Найти друзей</NavLink>
             </div>
             <div className={s.item}>
-                <a>Вопросы и ответы</a>
+                {localStorage.getItem("login") === "Admin" ?
+                    <NavLink to="/services/edit" className = { navData => navData.isActive ? s.active : s.item }>Добавить заказы</NavLink>
+                    : 
+                    <a>Вопросы и ответы</a> 
+                 }
+                
             </div>
         </nav>
     );

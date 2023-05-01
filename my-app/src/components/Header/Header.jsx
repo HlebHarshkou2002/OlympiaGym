@@ -11,6 +11,8 @@ const Header = (props) => {
   const logoutUser = () => {
     logoutAPI.logoutUser();
     localStorage.removeItem("token");
+    localStorage.removeItem("login");
+    localStorage.removeItem("isAuth");
     window.location.reload();
   }
 
@@ -22,7 +24,7 @@ const Header = (props) => {
         <p>Olympia Gym</p>
       </div>
 
-      <Nav />
+      <Nav userRole={props.userRole} />
 
       {props.isFetching ? (
         <div className={s.preloader__wrapper}>
@@ -30,14 +32,15 @@ const Header = (props) => {
         </div>
       ) : (
         <div className={s.register__item}>
-          {props.isAuth ? (
+          {localStorage.getItem("isAuth") ? (
             <div>
             <NavLink
               to={`/profile`}
               style={{ textDecoration: "none" }}
               className={s.register}
             >
-              <p>{props.login}</p>
+              {/* <p>{props.login}</p> */}
+              <p>{localStorage.getItem("login")}</p>
             </NavLink>
             <button onClick={logoutUser}>Выйти</button>
             </div>

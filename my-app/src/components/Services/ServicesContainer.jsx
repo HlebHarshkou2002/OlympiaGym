@@ -1,16 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
 import { servicesAPI } from "../../api/servicesAPI";
-import { setServices } from "../../redux/services-reducer";
+import { setServices, followService, unFollowService } from "../../redux/services-reducer";
 import Services from "./Services";
 
 class ServicesAPIContainer extends React.Component {
   componentDidMount() {
     if (this.props.servicesData.length === 0) {
-      servicesAPI.getServices()
+      servicesAPI
+        .getServices()
         .then((data) => {
+          console.log("ВЫЗОВ ФУНКЦИИ 1")
           this.props.setServices(data.data);
-        }).catch((err) => {
+        })
+        .catch((err) => {
           // if(err.response.status === 403) {
           //   alert("Вы не авторизованы.")
           // }
@@ -19,7 +22,13 @@ class ServicesAPIContainer extends React.Component {
   }
 
   render() {
-    return <Services servicesData={this.props.servicesData} />;
+    return (
+      <Services
+        followService={this.props.followService}
+        unFollowService={this.props.unFollowService}
+        servicesData={this.props.servicesData}
+      />
+    );
   }
 }
 
@@ -31,6 +40,8 @@ const mapStateToProps = (state) => {
 
 const ServicesContainer = connect(mapStateToProps, {
   setServices,
+  followService,
+  unFollowService
 })(ServicesAPIContainer);
 
 export default ServicesContainer;

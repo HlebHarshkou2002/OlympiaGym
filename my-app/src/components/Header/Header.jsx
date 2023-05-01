@@ -6,6 +6,12 @@ import Nav from "./Nav/Nav";
 import s from "./Header.module.css";
 
 const Header = (props) => {
+  
+  const logoutUser = () => {
+
+  }
+
+
   return (
     <header className={s.header}>
 
@@ -30,7 +36,7 @@ const Header = (props) => {
             >
               <p>{props.login}</p>
             </NavLink>
-            <button>Выйти</button>
+            <button onClick={logoutUser}>Выйти</button>
             </div>
           ) : (
             <NavLink className={s.register} to={"/login"}>

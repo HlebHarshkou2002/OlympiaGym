@@ -24,16 +24,21 @@ export const servicesAPI = {
 
   makeServiceOrder(serviceId, userId) {
     let token = localStorage.getItem("token");
-    return instance.post(`/order`, {
+    return instance
+      .post(`/order`, {
+        Authorization: token,
+        serviceId: serviceId,
+        userId: userId,
+      }, {
         headers: {
           Authorization: token,
-        },
-        "serviceId": serviceId,
-        "userId": userId
+        }
       })
       .then((response) => {
         return response;
       })
-      .catch((error) => {console.log(error)});
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };

@@ -11,23 +11,22 @@ const ProfileInfo = (props) => {
   console.log(props.profile);
   return (
     <div className={s.profileInfo}>
-      <div
-        className={s.profileImages}
-      >
-        <div className={s.imagesWrapper}>
-          {localStorage.getItem("isAuth") ? 
-          <img className={s.profileImageMain} src={ProfileImage} alt="Main image"/>
-          :
-          <h1>Вы не авторизованы</h1>
-          }
-        </div>
+        <div className={s.profileImages}>
+          <div className={s.imagesWrapper}>
+            <img
+              className={s.profileImageMain}
+              src={ProfileImage}
+              alt="Main image"
+            />
+          </div>
 
-        <div className={s.profileDescription}>
-          <div className={s.profileName}>
-            <span>{localStorage.getItem("login")}</span>
+          <div className={s.profileDescription}>
+            <div className={s.profileName}>
+              <span>{localStorage.getItem("login")}</span>
+            </div>
           </div>
         </div>
-      </div>
+
     </div>
   );
 };

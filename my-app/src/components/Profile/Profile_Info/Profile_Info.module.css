@@ -5,11 +5,6 @@
 .profileImages {
     display: flex;
     position: relative;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    
     min-height: 300px;
     height: 100%;
 }
@@ -19,11 +14,13 @@
 }
 
 .profileImageMain {
-    position: absolute;
+    /* position: absolute; */
     border-radius: 10%;
 
-    top: 15%;
-    left: 10%;
+    /* top: 15%;
+    left: 10%; */
+    margin-top: 40px;
+    margin-left: 50px;
 
     max-width: 230px;
     max-height: 400px;
@@ -34,7 +31,8 @@
 }
 
 .profileDescription {
-    padding-top: 100px;
+    margin-top: 100px;
+    margin-left: -100px;
     font-size: 28px;
     font-weight: 400;
     color: #fdfdfd;

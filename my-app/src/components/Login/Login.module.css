@@ -18,6 +18,11 @@
     font-size: 16px;
 }
 
+.login__button {
+    color: white;
+    text-decoration: none;
+}
+
 .submit__block button:hover {
     background-color: #111111;
     cursor: pointer;

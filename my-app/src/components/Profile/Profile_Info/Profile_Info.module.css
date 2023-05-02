@@ -6,28 +6,12 @@
     display: flex;
     position: relative;
 
-    /* background-image: url('https://img.pac.ru/resorts/213084/265649/big/F4022E267F00010148FB84960BB1A70A.jpg'); */
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     
     min-height: 300px;
     height: 100%;
-}
-
-.profileImages:after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;    
-	position: absolute;
-	top: 0;    
-	left: 0;   
-	background: transparent;
-	/* background-image: linear-gradient(to bottom, #11de93 20%, #0e7ad6 80%);     */
-	background-image: linear-gradient(to bottom, #ffffff 10%, #000000 80%);    
-	opacity: 0.45; 
 }
 
 .imagesWrapper {
@@ -66,4 +50,5 @@
 .profileName {
     font-size: 46px;
     font-weight: 600;
+    color: black;
 }

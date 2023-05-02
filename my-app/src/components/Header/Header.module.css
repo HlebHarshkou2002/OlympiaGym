@@ -55,6 +55,21 @@
     margin-right: 9px;
 }
 
+.logout__button {
+    z-index: 10;
+    color: white;
+    width: 80px;
+    height: 20px;
+    background-color: black;
+    border: none;
+    text-decoration: none;
+}
+
+.logout__button:hover {
+    background-color: rgb(105, 0, 0);
+    cursor: pointer;
+}
+
 .register:hover {
     cursor: pointer;
     color: white;

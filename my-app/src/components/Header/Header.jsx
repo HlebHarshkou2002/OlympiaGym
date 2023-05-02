@@ -42,7 +42,9 @@ const Header = (props) => {
               {/* <p>{props.login}</p> */}
               <p>{localStorage.getItem("login")}</p>
             </NavLink>
-            <button onClick={logoutUser}>Выйти</button>
+            <button onClick={logoutUser} className={s.logout__button}>
+              <NavLink to="/Main" className={s.logout__button}>Выйти</NavLink>
+            </button>
             </div>
           ) : (
             <NavLink className={s.register} to={"/login"}>

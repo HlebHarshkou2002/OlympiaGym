@@ -18,7 +18,7 @@ const Login = (props) => {
       .then((response) => {
         if(response.status === 200) {
           props.setUserData(response.data.email, userLogin, userPassword)
-          alert("Вы успешно авторизовались!")
+          // alert("Вы успешно авторизовались!")
           window.location.reload();
 
         }
@@ -49,7 +49,9 @@ const Login = (props) => {
       </div>
 
       <div className={s.submit__block}>
-        <button onClick={onAddLogin}>Войти</button>
+        <button onClick={onAddLogin}>
+          <NavLink to="/profile" className={s.login__button}>Войти</NavLink>
+        </button>
         <div>
           <NavLink to={"/registration"}>Зарегестрироваться</NavLink>
         </div>

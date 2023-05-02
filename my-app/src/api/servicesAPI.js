@@ -41,4 +41,25 @@ export const servicesAPI = {
         console.log(error);
       });
   },
+
+  addNewService(serviceName, servicePrice, categoryId) {
+    let token = localStorage.getItem("token");
+    return instance
+    .post(`/service`, {
+      name: serviceName,
+      price: servicePrice,
+      categoryId: categoryId,
+    }, {
+      headers: {
+        Authorization: token,
+      }
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  }
 };

@@ -44,7 +44,7 @@ const Service = (props) => {
           <img src={ServiceImage} alt="Service image" />
         </div>
         <div className={s.category__info}>
-          <p>Описание: {props.category.description}</p>
+          {/* <p>Описание: {props.category.description}</p> */}
           <p className={s.category__name}>
             Категория: <span>{props.category.name}</span>
           </p>

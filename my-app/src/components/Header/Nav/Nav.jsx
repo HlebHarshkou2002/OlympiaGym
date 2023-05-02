@@ -4,18 +4,17 @@ import s from './Nav.module.css';
 
 const Nav = (props) => {
 
-    let checkUserRole = () => {
-
-    }
-
-
     return (
         <nav className={s.nav}>
             <div className={`${s.item} ${s.active}`}>
                 <NavLink to="/Profile" className = { navData => navData.isActive ? s.active : s.item }>Мой профиль</NavLink>
             </div>
             <div className={`${s.item} ${s.active}` }>
-                <NavLink to="/Dialogs" className = { navData => navData.isActive ? s.active : s.item }>Задать вопрос</NavLink>
+                {localStorage.getItem("login") === "Admin" ?
+                    ""
+                    : 
+                    <NavLink to="/Dialogs" className = { navData => navData.isActive ? s.active : s.item }>Задать вопрос</NavLink>
+                }
             </div>
             <div className={s.item}>
             <NavLink to="/Main" className = { navData => navData.isActive ? s.active : s.item }>Главная</NavLink>
@@ -24,11 +23,15 @@ const Nav = (props) => {
             <NavLink to="/Services" className = { navData => navData.isActive ? s.active : s.item }>Наши услуги</NavLink>
             </div>
             <div className={s.item}>
-            <NavLink to="/Users" className = { navData => navData.isActive ? s.active : s.item }>Найти друзей</NavLink>
+                {localStorage.getItem("login") === "Admin" ?
+                    <NavLink to="/EditCategories" className = { navData => navData.isActive ? s.active : s.item }>Управление категориями</NavLink>
+                    : 
+                    <NavLink to="/Users" className = { navData => navData.isActive ? s.active : s.item }>Найти друзей</NavLink>
+                }
             </div>
             <div className={s.item}>
                 {localStorage.getItem("login") === "Admin" ?
-                    <NavLink to="/services/edit" className = { navData => navData.isActive ? s.active : s.item }>Добавить заказы</NavLink>
+                    <NavLink to="/EditServices" className = { navData => navData.isActive ? s.active : s.item }>Управление услугами</NavLink>
                     : 
                     <a>Вопросы и ответы</a> 
                  }

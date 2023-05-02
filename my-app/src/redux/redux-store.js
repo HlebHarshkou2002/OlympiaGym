@@ -7,6 +7,7 @@ import usersReducer from './users-reducer';
 import servicesReducer from "./services-reducer";
 import loginReducer from "./login-reducer";
 import registrationReducer from "./registration-reducer";
+import servicesManagerReducer from "./services-manager-reducer";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -17,6 +18,7 @@ let reducers = combineReducers({
     servicesPage: servicesReducer,
     loginPage: loginReducer,
     registrationPage: registrationReducer,
+    servicesManagerPage: servicesManagerReducer,
 });   
 
 let store = createStore(reducers);

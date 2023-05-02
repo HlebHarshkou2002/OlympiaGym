@@ -8,6 +8,7 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import ServicesContainer from "./components/Services/ServicesContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import RegistrationContainer from "./components/Registration/RegistrationContainer";
+import ServicesManagerContainer from "./components/ServicesManager/ServicesManagerContainer";
 
 const App = (props) => {
 
@@ -24,6 +25,7 @@ const App = (props) => {
                  <Route path="/users" element={<UsersContainer/>}/>
                  <Route path="/login" element={<LoginContainer />}/>
                  <Route path="/registration" element={<RegistrationContainer />}/>
+                 <Route path="/EditServices" element={<ServicesManagerContainer />}/>
              </Routes>
          </div>
         </div>

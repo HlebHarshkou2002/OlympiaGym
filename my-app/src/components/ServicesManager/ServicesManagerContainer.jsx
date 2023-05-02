@@ -1,10 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { servicesAPI } from "../../api/servicesAPI";
-import { setServices, followService, unFollowService } from "../../redux/services-reducer";
-import Services from "./Services";
+import { setServices, setNewService} from "../../redux/services-manager-reducer";
+import ServicesManager from "./ServicesManager";
 
-class ServicesAPIContainer extends React.Component {
+class ServicesManagerAPIContainer extends React.Component {
   componentDidMount() {
     if (this.props.servicesData.length === 0) {
       servicesAPI
@@ -23,10 +23,9 @@ class ServicesAPIContainer extends React.Component {
 
   render() {
     return (
-      <Services
-        followService={this.props.followService}
-        unFollowService={this.props.unFollowService}
+      <ServicesManager
         servicesData={this.props.servicesData}
+        setNewService={this.props.setNewService}
       />
     );
   }
@@ -34,14 +33,13 @@ class ServicesAPIContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    servicesData: state.servicesPage.services,
+    servicesData: state.servicesManagerPage.services,
   };
 };
 
-const ServicesContainer = connect(mapStateToProps, {
+const ServicesManagerContainer = connect(mapStateToProps, {
   setServices,
-  followService,
-  unFollowService
-})(ServicesAPIContainer);
+  setNewService
+})(ServicesManagerAPIContainer);
 
-export default ServicesContainer;
+export default ServicesManagerContainer;

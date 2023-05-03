@@ -41,6 +41,15 @@ const ServicesManager = (props) => {
 
   }
 
+  let deleteService = () => {
+    console.log("Айдишник услуги: ", props.id);
+    servicesAPI.deleteService(props.id).then((response) => {
+      window.location.reload();
+      console.log(response)
+    })
+    .catch((error) => console.log(error));
+  }
+
   return (
     <div className={s.services__wrapper}>
       <div>
@@ -51,7 +60,10 @@ const ServicesManager = (props) => {
       <div className={s.services__manager}>
         <div className={s.services__manager__buttons}>
           <div className={s.services__add}>
-            <button onClick={addService}>+</button>
+            <button onClick={addService}>Добавить услугу</button>
+          </div>
+          <div className={s.services__delete}>
+            <button onClick={deleteService}>Удалить все</button>
           </div>
         </div>
 

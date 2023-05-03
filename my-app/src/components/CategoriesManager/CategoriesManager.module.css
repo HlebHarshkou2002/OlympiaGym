@@ -6,7 +6,6 @@
 .services__manager {
     width: 500px;
     margin: 0 auto;
-    margin-left: 200px;
 }
 
 .services__manager__buttons {
@@ -19,26 +18,13 @@
 
 .services__add button {
     align-items: center;
-    margin-right: 20px;
     font-size: 20px;
     font-weight: bold;
-    width: 200px;
+    width: 300px;
     height: 40px;
     border: none;
     border-radius: 5px;
     background-color: rgb(54, 158, 54);
-}
-
-.services__delete button {
-    align-items: center;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    width: 200px;
-    height: 40px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(184, 21, 21);
 }
 
 .services__manager button:hover {

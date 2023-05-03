@@ -10,6 +10,7 @@ import registrationReducer from "./registration-reducer";
 import servicesManagerReducer from "./services-manager-reducer";
 import userOrdersReducer from "./user-orders-reducer";
 import ordersManagerReducer from "./orders-manager-reducer";
+import categoriesManagerReducer from "./categories-manager-reducer";
 
 let reducers = combineReducers({
     profilePage: profileReducer,
@@ -21,6 +22,7 @@ let reducers = combineReducers({
     loginPage: loginReducer,
     registrationPage: registrationReducer,
     servicesManagerPage: servicesManagerReducer,
+    categoriesManagerPage: categoriesManagerReducer,
     ordersManagerPage: ordersManagerReducer,
     userOrdersPage: userOrdersReducer,
 });   

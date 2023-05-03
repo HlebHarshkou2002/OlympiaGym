@@ -7,6 +7,13 @@ import { servicesAPI } from "../../../api/servicesAPI";
 
 const ServiceManager = (props) => {
   // console.log("Что у нас в ПРОПСАХ: ", props);
+  let deleteService = () => {
+    console.log("Что у нас в ПРОПСАХ: ", props.id);
+    servicesAPI.deleteService(props.id).then((response) => {
+      console.log(response)
+    })
+    .catch((error) => console.log(error));
+  }
 
   return (
     <div>
@@ -20,7 +27,7 @@ const ServiceManager = (props) => {
         </div>
         
         <div className={s.services__delete}>
-            <button>-</button>
+            <button onClick={deleteService}>-</button>
           </div>
       </div>
     </div>

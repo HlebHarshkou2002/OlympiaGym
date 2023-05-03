@@ -41,3 +41,9 @@
 .totalProfit {
     margin-top: 10px;
 }
+
+.active__user__status {
+    padding: 2px;
+    background-color: rgb(47, 124, 47);
+    color: white;
+}

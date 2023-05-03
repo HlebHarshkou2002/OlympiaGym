@@ -15,7 +15,11 @@ const OrderManager = (props) => {
             <p>{props.serviceName}</p>
             <p>{props.userName}</p>
             <p>{props.servicePrice} $</p>
-            <p>{props.userStatus}</p>
+            {props.userStatus === "ACTIVE" ?
+              <p className={s.active__user__status}>{props.userStatus}</p>
+              :
+              <p>UNACTIVE</p>
+            }
             <p>{props.orderTime}</p>
           </div>
         </div>

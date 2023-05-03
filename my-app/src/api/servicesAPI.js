@@ -61,5 +61,21 @@ export const servicesAPI = {
       console.log(error);
     });
 
+  },
+
+  deleteService(serviceId) {
+    let token = localStorage.getItem("token");
+    return instance.delete(`/service?id=${serviceId}`,
+     {
+      headers: {
+        Authorization: token,
+      }
+    })
+    .then((response) => {
+      return response;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   }
 };

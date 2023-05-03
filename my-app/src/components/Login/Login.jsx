@@ -44,7 +44,7 @@ const Login = (props) => {
         </div>
         <div className={s.password__block}>
           <p>Password: </p>
-          <input type="text" ref={password}/>
+          <input type="password" ref={password}/>
         </div>
       </div>
 

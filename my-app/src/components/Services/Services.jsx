@@ -11,34 +11,54 @@ const Services = (props) => {
   ));
 
   let searchServiceText = React.createRef();
+  let rangePrice = React.createRef();
 
   let searchServiceByName = () => {
     searchServiceText = searchServiceText.current.value;
-    console.log(searchServiceText)
+    rangePrice = rangePrice.current.value;
+    console.log(searchServiceText.toUpperCase())
+    console.log(rangePrice)
     let searchElementsArray = [];
+    console.log(props)
     for(let el of props.servicesData) {
       console.log(el)
-      if(searchServiceText === el.name) {
+      if(searchServiceText.toUpperCase() === el.name.toUpperCase()) {
         searchElementsArray.push(el)
         console.log("СОВПАДАЮЩИЙ ЭЛЕМЕНТ", el)
       }
-      if(searchServiceText === ""){
-        window.location.reload();
+      if(el.price < rangePrice) {
+        searchElementsArray.push(el)
       }
     }
     console.log("НАШ МАССИВ НАЙДЕННЫХ ЭЛЕМЕНТОВ: ",searchElementsArray)
     props.setServices(searchElementsArray);
   }
 
+  let reloadPage = () => {
+    window.location.reload();
+  }
+
+  let selectRange = (event) => {
+    console.log(event.target.value)
+  }
+
   return (
-    <div className={s.services__wrapper}>
-      <h1>Наши услуги</h1>
+      <div>
+      {localStorage.getItem("isAuth") ? (
+        <div className={s.services__wrapper}>
+                <h1>Наши услуги</h1>
+                <input type="search" placeholder="Введите название услуги" ref={searchServiceText} className={s.search__input}/>
+                <input type="number" placeholder="Введите ценовой диапазон" ref={rangePrice} className={s.search__input}/>
+                <button onClick={searchServiceByName} className={s.search__button}>Найти</button>
+                <button onClick={reloadPage} className={s.reset__search}>Сбросить поиск</button>
 
-      <input type="text" placeholder="Введите название услуги" ref={searchServiceText} className={s.search__input}/>
-      <button onClick={searchServiceByName} className={s.search__button}>Найти</button>
+                <div className={s.services__elements}>{servicesElements}</div>
+                </div>
+      ) : (
+          <h1>Вы не авторизованы</h1>
+      )}      
+      </div>
 
-      <div className={s.services__elements}>{servicesElements}</div>
-    </div>
   );
 };
 

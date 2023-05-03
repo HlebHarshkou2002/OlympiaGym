@@ -1,35 +1,56 @@
 .services__wrapper div {
-    display: flex;
-    margin-right: 20px;
-    max-width: 1200px;
+  display: flex;
+  margin-right: 20px;
+  max-width: 1200px;
 }
 
 .services__elements {
-    display: flex;
-    flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 /* Search elements */
 
 .search__input {
-    width: 300px;
-    margin-bottom: 30px;
-    border: none;
-    box-shadow: 1px 1px 20px silver;
-    border-radius: 3px;
+  width: 200px;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  border: none;
+  box-shadow: 1px 1px 20px silver;
+  border-radius: 3px;
 }
 
 .search__button {
-    margin-left: 10px;
-    width: 100px;
-    height: 30px;
-    background-color: #DB3522;
-    border: none;
-    border-radius: 5px;
-    color: white;
+  margin-left: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: #db3522;
+  border: none;
+  border-radius: 5px;
+  color: white;
 }
 
 .search__button:hover {
-    background-color: #000000;
-    cursor: pointer;
+  background-color: #000000;
+  cursor: pointer;
 }
+
+.reset__search {
+  margin-left: 10px;
+  margin-left: 10px;
+  width: 150px;
+  height: 30px;
+  background-color: #333;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+.reset__search:hover {
+  background-color: silver;
+  color: black;
+  cursor: pointer;
+}
+
+/* range input */

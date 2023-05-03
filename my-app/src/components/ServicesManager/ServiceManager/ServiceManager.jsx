@@ -6,7 +6,16 @@ import { loginAPI } from "../../../api/loginAPI";
 import { servicesAPI } from "../../../api/servicesAPI";
 
 const ServiceManager = (props) => {
-  // console.log("Что у нас в ПРОПСАХ: ", props);
+  console.log("Что у нас в ПРОПСАХ: ", props);
+  
+  let deleteService = () => {
+    console.log("Айдишник услуги: ", props.id);
+    servicesAPI.deleteService(props.id).then((response) => {
+      window.location.reload();
+      console.log(response)
+    })
+    .catch((error) => console.log(error));
+  }
 
   return (
     <div>
@@ -19,7 +28,9 @@ const ServiceManager = (props) => {
           </div>
         </div>
         
-
+          <div className={s.services__delete}>
+            <button onClick={deleteService}>Удалить все</button>
+          </div>
       </div>
     </div>
   );

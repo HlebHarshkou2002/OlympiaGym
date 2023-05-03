@@ -21,4 +21,16 @@ export const ordersAPI = {
         return response;
       });
   },
+  getAllOrders() {
+    let token = localStorage.getItem("token");
+    return instance
+      .get(`order/list`, {
+        headers: {
+          Authorization: token,
+        },
+      })
+      .then((response) => {
+        return response;
+      });
+  }
 };

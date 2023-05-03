@@ -9,6 +9,8 @@ import ServicesContainer from "./components/Services/ServicesContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import RegistrationContainer from "./components/Registration/RegistrationContainer";
 import ServicesManagerContainer from "./components/ServicesManager/ServicesManagerContainer";
+import OrdersContainer from "./components/UserOrders/OrdersContainer";
+import OrdersManagerContainer from "./components/OrdersManager/OrdersManagerContainer";
 
 const App = (props) => {
 
@@ -26,6 +28,7 @@ const App = (props) => {
                  <Route path="/login" element={<LoginContainer />}/>
                  <Route path="/registration" element={<RegistrationContainer />}/>
                  <Route path="/EditServices" element={<ServicesManagerContainer />}/>
+                 <Route path="/AllOrders" element={<OrdersManagerContainer />}/>
              </Routes>
          </div>
         </div>

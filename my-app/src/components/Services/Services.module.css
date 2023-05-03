@@ -8,3 +8,28 @@
     display: flex;
     flex-flow: row wrap;
 }
+
+/* Search elements */
+
+.search__input {
+    width: 300px;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 1px 1px 20px silver;
+    border-radius: 3px;
+}
+
+.search__button {
+    margin-left: 10px;
+    width: 100px;
+    height: 30px;
+    background-color: #DB3522;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+.search__button:hover {
+    background-color: #000000;
+    cursor: pointer;
+}

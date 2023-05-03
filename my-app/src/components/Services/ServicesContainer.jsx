@@ -27,6 +27,7 @@ class ServicesAPIContainer extends React.Component {
         followService={this.props.followService}
         unFollowService={this.props.unFollowService}
         servicesData={this.props.servicesData}
+        setServices={this.props.setServices}
       />
     );
   }

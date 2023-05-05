@@ -4,60 +4,6 @@ const UNFOLLOW_SERVICE = "UNFOLLOW_SERVICE";
 
 let initialState = {
   services: [
-    //     {
-    //         "id": 1,
-    //         "name": "TRX",
-    //         "price": 100.0,
-    //         "categoryEntity": {
-    //             "id": 1,
-    //             "name": "fitness",
-    //             "description": "This category of fitness",
-    //             "serviceEntities": [
-    //                 1
-    //             ]
-    //         },
-    //         "equipmentEntity": [
-    //             {
-    //                 "id": 1,
-    //                 "service": 1,
-    //                 "equipment": {
-    //                     "id": 1,
-    //                     "name": "shtanga",
-    //                     "description": "this a description of equipment",
-    //                     "serviceEntities": [
-    //                         1
-    //                     ]
-    //                 }
-    //             }
-    //         ]
-    //     },
-    //     {
-    //       "id": 1,
-    //       "name": "TRX",
-    //       "price": 100.0,
-    //       "categoryEntity": {
-    //           "id": 1,
-    //           "name": "fitness",
-    //           "description": "This category of fitness",
-    //           "serviceEntities": [
-    //               1
-    //           ]
-    //       },
-    //       "equipmentEntity": [
-    //           {
-    //               "id": 1,
-    //               "service": 1,
-    //               "equipment": {
-    //                   "id": 1,
-    //                   "name": "shtanga",
-    //                   "description": "this a description of equipment",
-    //                   "serviceEntities": [
-    //                       1
-    //                   ]
-    //               }
-    //           }
-    //       ]
-    //   },
   ],
 };
 
